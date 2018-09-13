@@ -5,15 +5,17 @@
     <h3>Service Areas</h3>
     <p>Northwind Traders provides your supply and service needs in the following regions.</p>
 
+    <%-- use repeater if your intrested in viewing and listview if your intrested in editing the data\
+        gridview allows you to view edit delete information. the list view allows you to view edit delete and insert information--%>
     <div class="row">
-        <asp:Repeater ID="RegionRepeater" runat="server"
+        <asp:Repeater ID="RegionRepeater" runat="server" 
              DataSourceID="RegionsDataSource"
-             ItemType="NorthwindTraders.Entities.Region">
+             ItemType="NorthwindTraders.Entities.Region"> <%--Fully qualified class name. Namespace.classname--%>
             <ItemTemplate>
                 <div class="col-md-3">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4><%# Item.RegionDescription %></h4>
+                            <h4><%# Item.RegionDescription %></h4> <%--item.will bring up intellesense--%>
                         </div>
                         <div class="panel-body">
                             <asp:Repeater ID="TerritoryRepeater" runat="server"
